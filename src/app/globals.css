@@ -1,26 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap");
+
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: 9 9 11;
+  --surface: 24 24 27;
+  --surface-2: 39 39 42;
+  --border: 63 63 70;
+  --border-subtle: 39 39 42;
+  --text: 250 250 250;
+  --text-muted: 161 161 170;
+  --text-subtle: 113 113 122;
+  --accent: 245 158 11;
+  --accent-dim: 120 53 15;
+  --accent-fg: 9 9 11;
+}
+
+[data-theme="light"] {
+  --bg: 250 250 249;
+  --surface: 255 255 255;
+  --surface-2: 244 244 245;
+  --border: 228 228 231;
+  --border-subtle: 244 244 245;
+  --text: 9 9 11;
+  --text-muted: 82 82 91;
+  --text-subtle: 161 161 170;
+  --accent: 217 119 6;
+  --accent-dim: 254 243 199;
+  --accent-fg: 255 255 255;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: "Syne", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --color-bg: rgb(var(--bg));
+  --color-surface: rgb(var(--surface));
+  --color-surface-2: rgb(var(--surface-2));
+  --color-border: rgb(var(--border));
+  --color-border-subtle: rgb(var(--border-subtle));
+  --color-text: rgb(var(--text));
+  --color-muted: rgb(var(--text-muted));
+  --color-subtle: rgb(var(--text-subtle));
+  --color-accent: rgb(var(--accent));
+  --color-accent-dim: rgb(var(--accent-dim));
+  --color-accent-fg: rgb(var(--accent-fg));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    linear-gradient(rgb(var(--border) / 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--border) / 0.25) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+[data-theme="light"] body {
+  background-image:
+    linear-gradient(rgb(var(--border) / 0.55) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--border) / 0.55) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.3);
+  color: rgb(var(--text));
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--accent));
 }
