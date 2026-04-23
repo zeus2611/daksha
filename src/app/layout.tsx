@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -42,6 +44,8 @@ export default function RootLayout({
           <main className="flex-1">{children}</main>
           <Footer />
           <SanityLive />
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
