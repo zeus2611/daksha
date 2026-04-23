@@ -4,55 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
+import type { Project } from "@/data/projects";
 
-const project = {
-  title: "BridgeTalk",
-  category: "EdTech Platform",
-  year: "2024 – Present",
-  status: "Building",
-  tagline: "From zero to a fully shipped digital product for TOEFL/IELTS test takers.",
-  overview:
-    "BridgeTalk is an EdTech platform designed for TOEFL and IELTS test takers, with plans to expand into the broader ESL (English as a Second Language) market. We partnered with the founder from day one to build the entire digital stack — mobile app, web presence, B2B infrastructure, and marketing engine.",
-  services: [
-    "Flutter Mobile App (iOS & Android)",
-    "Marketing Landing Page (Next.js)",
-    "B2B Portal for institutional clients",
-    "User dashboard for students",
-    "Product launch video",
-    "Testimonial video editing",
-    "SEO strategy & implementation",
-    "Community building playbook",
-  ],
-  challenges: [
-    {
-      title: "Cross-platform from day one",
-      desc: "The client needed both iOS and Android simultaneously with a native-feel UX and a tight timeline. Flutter allowed us to ship both platforms from a single codebase without sacrificing performance.",
-    },
-    {
-      title: "Multi-audience web presence",
-      desc: "The platform serves both individual learners and institutional B2B clients — two very different user journeys. We designed separate portals while maintaining a unified brand language.",
-    },
-    {
-      title: "Marketing before launch",
-      desc: "Video content was needed to drive pre-launch signups. We handled full production of the landing page video and edited testimonials from early beta users.",
-    },
-  ],
-  stack: [
-    "Flutter", "Dart", "Firebase", "Appwrite",
-    "Next.js", "TypeScript", "Tailwind CSS",
-    "Python", "OpenAI", "Deepgram",
-    "Google Cloud Platform", "Google Analytics",
-    "Figma", "Premiere Pro",
-  ],
-  results: [
-    "Shipped mobile app to App Store & Play Store",
-    "Landing page live with product explainer video",
-    "B2B portal handling institutional inquiries",
-    "SEO foundation in place for organic growth",
-  ],
-};
-
-export default function BridgeTalkPage() {
+export function CaseStudyClient({ project }: { project: Project }) {
   return (
     <>
       <section className="pt-32 pb-16 max-w-6xl mx-auto px-6">
@@ -78,6 +32,17 @@ export default function BridgeTalkPage() {
             <span className="px-2 py-0.5 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-medium">
               {project.status}
             </span>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-xs text-muted hover:text-accent transition-colors ml-1"
+              >
+                <ExternalLink size={12} />
+                Live site
+              </a>
+            )}
           </div>
 
           <h1 className="font-display font-800 text-5xl md:text-7xl text-text tracking-tight mb-6">
@@ -99,9 +64,7 @@ export default function BridgeTalkPage() {
           className="grid grid-cols-1 lg:grid-cols-3 gap-12"
         >
           <div className="lg:col-span-2">
-            <h2 className="font-display font-700 text-2xl text-text mb-4">
-              Overview
-            </h2>
+            <h2 className="font-display font-700 text-2xl text-text mb-4">Overview</h2>
             <p className="text-muted leading-relaxed">{project.overview}</p>
           </div>
 
@@ -130,9 +93,7 @@ export default function BridgeTalkPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="font-display font-700 text-2xl text-text mb-10">
-              Key challenges
-            </h2>
+            <h2 className="font-display font-700 text-2xl text-text mb-10">Key challenges</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {project.challenges.map((c, i) => (
                 <motion.div
@@ -164,9 +125,7 @@ export default function BridgeTalkPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <h2 className="font-display font-700 text-2xl text-text mb-6">
-              Tech stack
-            </h2>
+            <h2 className="font-display font-700 text-2xl text-text mb-6">Tech stack</h2>
             <div className="flex flex-wrap gap-2">
               {project.stack.map((s) => (
                 <span
@@ -185,9 +144,7 @@ export default function BridgeTalkPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <h2 className="font-display font-700 text-2xl text-text mb-6">
-              What shipped
-            </h2>
+            <h2 className="font-display font-700 text-2xl text-text mb-6">What shipped</h2>
             <ul className="space-y-3">
               {project.results.map((r) => (
                 <li key={r} className="flex items-start gap-3">

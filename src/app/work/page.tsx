@@ -4,19 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
-
-const projects = [
-  {
-    slug: "bridgetalk",
-    title: "BridgeTalk",
-    category: "EdTech Platform",
-    year: "2024–2025",
-    status: "Shipped",
-    desc: "End-to-end digital suite for a TOEFL/IELTS prep platform. Mobile app, web presence, B2B tools, video production, and ongoing growth marketing.",
-    services: ["Mobile App", "Web Dev", "Video", "SEO", "Branding"],
-    highlight: "Flutter app + Next.js platform + full video suite",
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function WorkPage() {
   return (
@@ -85,7 +73,7 @@ export default function WorkPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.services.map((s) => (
+                  {project.tags.map((s) => (
                     <span
                       key={s}
                       className="px-2 py-0.5 rounded-md bg-surface-2 text-subtle text-xs font-medium"

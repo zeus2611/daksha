@@ -4,23 +4,13 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-
-const featuredWork = [
-  {
-    slug: "bridgetalk",
-    title: "BridgeTalk",
-    category: "EdTech Platform",
-    description:
-      "End-to-end digital suite for a TOEFL/IELTS prep platform — Flutter mobile app for iOS & Android, marketing landing page, B2B portal, user dashboard, product video, and ongoing SEO & community strategy.",
-    tags: ["Flutter", "Next.js", "Video", "SEO", "Dashboard"],
-    year: "2024–2025",
-    status: "Building",
-  },
-];
+import { getLatestProjects } from "@/data/projects";
 
 export function WorkSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const featuredWork = getLatestProjects(3);
 
   return (
     <section className="relative py-24" id="work" style={{ background: 'radial-gradient(ellipse 100% 60% at 50% 0%, rgb(245 158 11 / 0.07) 0%, transparent 55%), rgb(var(--surface) / 0.3)' }}>
@@ -85,7 +75,7 @@ export function WorkSection() {
                     {project.title}
                   </h3>
                   <p className="text-sm text-muted leading-relaxed max-w-2xl mb-4">
-                    {project.description}
+                    {project.desc}
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (

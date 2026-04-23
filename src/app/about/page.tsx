@@ -4,54 +4,7 @@ import { motion } from "framer-motion";
 import { RiTwitterXFill, RiLinkedinFill, RiGithubFill } from "react-icons/ri";
 import Image from "next/image";
 import { CTASection } from "@/components/sections/CTASection";
-
-const team = [
-  {
-    name: "Nischay",
-    role: "Full-Stack Developer",
-    bio: "Builds the backend systems, APIs, and complex web platforms. Obsessed with clean architecture and performance.",
-    tags: ["Python", "Google Cloud", "OpenAI", "TypeScript"],
-    socials: { github: "https://github.com/zeus2611", linkedin: "https://www.linkedin.com/in/nischay-2604/" },
-    initials: "FS",
-    image: "/images/nischay.png",
-  },
-  {
-    name: "Shivanshu Singh",
-    role: "Mobile Developer",
-    bio: "Flutter specialist with a sharp eye for UI. Builds cross-platform apps that feel native on both iOS and Android.",
-    tags: ["Flutter", "Dart", "Firebase", "iOS", "Android"],
-    socials: { github: "https://github.com/Shivanshu97i", linkedin: "https://www.linkedin.com/in/shivanshu-singh-4454311b8/" },
-    initials: "MD",
-    image: "/images/shivanshu.jpeg",
-  },
-  {
-    name: "Rithik Kasera",
-    role: "Brand & UX Designer",
-    bio: "Translates complex ideas into clean, trustworthy visual systems. From logo to pixel-perfect UI, every detail is intentional.",
-    tags: ["Figma", "Branding", "UI/UX", "Design Systems"],
-    socials: { linkedin: "https://www.linkedin.com/in/rithik-kasera310/" },
-    initials: "DE",
-    image: "/images/rithik.jpeg",
-  },
-  {
-    name: "Aditya Singh",
-    role: "Marketing Strategist",
-    bio: "Drives organic growth through SEO, content, and community. Focuses on systems that compound rather than campaigns that expire.",
-    tags: ["SEO", "Content Strategy", "Analytics", "Community"],
-    socials: { linkedin: "https://www.linkedin.com/in/aditya-singh-journll/" },
-    initials: "MS",
-    image: null as string | null,
-  },
-  {
-    name: "Rizwal Abrol",
-    role: "Video & Graphics",
-    bio: "Turns products into stories. From launch videos to testimonial edits, creates visual content that converts.",
-    tags: ["After Effects", "Premiere Pro", "Motion", "3D"],
-    socials: { linkedin: "https://www.linkedin.com/in/rizwal-abrol007/" },
-    initials: "VG",
-    image: null as string | null,
-  },
-];
+import { team, type TeamMember } from "@/data/team";
 
 const socialIcons = {
   github: RiGithubFill,
@@ -98,16 +51,16 @@ export default function AboutPage() {
             <span className="text-muted">Serious output.</span>
           </h1>
           <p className="text-muted text-lg leading-relaxed">
-            Daksha is a full-service digital agency built by five people who each
-            went deep in their craft before coming together. No generalists
+            Daksha is a full-service digital agency built by five people who
+            each went deep in their craft before coming together. No generalists
             stretched thin across disciplines — every service has a dedicated
             specialist behind it.
           </p>
           <p className="mt-4 text-muted leading-relaxed">
-            We started as collaborators on a single project. The results were good
-            enough that we decided to do it for others. Every person here has
-            2–3 years of focused, real-world experience — and we move with the
-            speed and accountability of a small team that genuinely cares.
+            We started as collaborators on a single project. The results were
+            good enough that we decided to do it for others. Every person here
+            has 2–3 years of focused, real-world experience — and we move with
+            the speed and accountability of a small team that genuinely cares.
           </p>
         </motion.div>
       </section>
@@ -140,7 +93,9 @@ export default function AboutPage() {
                 <div className="w-8 h-8 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
                   <span className="font-display font-700 text-sm">{i + 1}</span>
                 </div>
-                <h3 className="font-display font-700 text-text mb-2">{v.title}</h3>
+                <h3 className="font-display font-700 text-text mb-2">
+                  {v.title}
+                </h3>
                 <p className="text-sm text-muted leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
@@ -197,7 +152,9 @@ export default function AboutPage() {
               <p className="text-xs text-accent font-medium mt-0.5 mb-3">
                 {member.role}
               </p>
-              <p className="text-sm text-muted leading-relaxed mb-4">{member.bio}</p>
+              <p className="text-sm text-muted leading-relaxed mb-4">
+                {member.bio}
+              </p>
 
               <div className="flex flex-wrap gap-1.5 mb-5">
                 {member.tags.map((tag) => (
@@ -212,7 +169,8 @@ export default function AboutPage() {
 
               <div className="flex items-center gap-3">
                 {Object.entries(member.socials).map(([platform, href]) => {
-                  const Icon = socialIcons[platform as keyof typeof socialIcons];
+                  const Icon =
+                    socialIcons[platform as keyof typeof socialIcons];
                   return Icon ? (
                     <a
                       key={platform}
