@@ -19,10 +19,7 @@ const footerLinks = {
 
 const socials = [
   { icon: RiTwitterXFill, href: "#", label: "X (Twitter)" },
-  { icon: RiLinkedinFill, href: "#", label: "LinkedIn" },
-  { icon: RiGithubFill, href: "#", label: "GitHub" },
-  { icon: RiInstagramFill, href: "#", label: "Instagram" },
-  { icon: RiBehanceFill, href: "#", label: "Behance" },
+  { icon: RiLinkedinFill, href: "https://www.linkedin.com/company/daksha-studio/", label: "LinkedIn" },
 ];
 
 export function Footer() {
@@ -36,7 +33,7 @@ export function Footer() {
               href="/"
               className="font-display font-800 text-xl tracking-tight text-text hover:text-accent transition-colors"
             >
-              DAKSHA
+              DAKSHA Studio
             </Link>
             <p className="mt-4 text-sm text-muted leading-relaxed max-w-xs">
               Precision-built digital products for startups and solopreneurs
@@ -81,7 +78,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-subtle">
-            &copy; {new Date().getFullYear()} Daksha. All rights reserved.
+            &copy; {new Date().getFullYear()} Daksha Studio. All rights reserved.
           </p>
           <p className="text-xs text-subtle">
             Built with precision in India.

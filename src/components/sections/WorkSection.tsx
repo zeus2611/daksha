@@ -14,7 +14,7 @@ const featuredWork = [
       "End-to-end digital suite for a TOEFL/IELTS prep platform — Flutter mobile app for iOS & Android, marketing landing page, B2B portal, user dashboard, product video, and ongoing SEO & community strategy.",
     tags: ["Flutter", "Next.js", "Video", "SEO", "Dashboard"],
     year: "2024–2025",
-    status: "Shipped",
+    status: "Building",
   },
 ];
 

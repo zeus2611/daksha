@@ -8,8 +8,8 @@ import { CTASection } from "@/components/sections/CTASection";
 const project = {
   title: "BridgeTalk",
   category: "EdTech Platform",
-  year: "2024–2025",
-  status: "Shipped",
+  year: "2024 – Present",
+  status: "Building",
   tagline: "From zero to a fully shipped digital product for TOEFL/IELTS test takers.",
   overview:
     "BridgeTalk is an EdTech platform designed for TOEFL and IELTS test takers, with plans to expand into the broader ESL (English as a Second Language) market. We partnered with the founder from day one to build the entire digital stack — mobile app, web presence, B2B infrastructure, and marketing engine.",
@@ -38,10 +38,11 @@ const project = {
     },
   ],
   stack: [
-    "Flutter", "Dart", "Firebase",
+    "Flutter", "Dart", "Firebase", "Appwrite",
     "Next.js", "TypeScript", "Tailwind CSS",
-    "Supabase", "Premiere Pro", "After Effects",
-    "Figma", "Google Analytics",
+    "Python", "OpenAI", "Deepgram",
+    "Google Cloud Platform", "Google Analytics",
+    "Figma", "Premiere Pro",
   ],
   results: [
     "Shipped mobile app to App Store & Play Store",
