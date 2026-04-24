@@ -117,9 +117,9 @@ export function HeroSection() {
           transition={{ duration: 1, delay: 0.6 }}
         >
           {[
-            { value: "1", label: "Client shipped" },
+            { value: "2", label: "Client shipped" },
             { value: "5", label: "Services offered" },
-            { value: "2–3", label: "Years experience" },
+            { value: "3", label: "Years experience" },
             { value: "100%", label: "Remote-native" },
           ].map(({ value, label }) => (
             <div key={label}>

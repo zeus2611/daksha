@@ -64,6 +64,6 @@ export const team: TeamMember[] = [
       linkedin: "https://www.linkedin.com/in/rizwal-abrol007/",
     },
     initials: "VG",
-    image: null,
+    image: "/images/rizwal.jpeg",
   },
 ];

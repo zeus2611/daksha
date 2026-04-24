@@ -78,7 +78,8 @@ export const projects: Project[] = [
     slug: "bridgetalk",
     title: "BridgeTalk",
     category: "EdTech Platform",
-    year: "2024–2025",
+    year: "2024 – Present",
+    liveUrl: "https://www.bridgetalk.ai",
     status: "Building",
     tagline: "From zero to a fully shipped digital product for TOEFL/IELTS test takers.",
     overview:
