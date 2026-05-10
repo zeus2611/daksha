@@ -8,11 +8,12 @@ import {
   Video,
   TrendingUp,
   CheckCircle2,
+  ArrowRight,
 } from "lucide-react";
 import Link from "next/link";
 import { CTASection } from "@/components/sections/CTASection";
 
-const services = [
+const core_services = [
   {
     id: "mobile",
     icon: Smartphone,
@@ -58,6 +59,9 @@ const services = [
     ],
     stack: ["Figma", "Adobe Illustrator", "Framer"],
   },
+];
+
+const extended_services = [
   {
     id: "video",
     icon: Video,
@@ -94,7 +98,7 @@ function ServiceBlock({
   service,
   index,
 }: {
-  service: (typeof services)[0];
+  service: (typeof core_services)[0];
   index: number;
 }) {
   const isEven = index % 2 === 0;
@@ -106,7 +110,7 @@ function ServiceBlock({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 py-20 border-t border-border-subtle ${
+      className={`grid grid-cols-1 lg:grid-cols-2 gap-12 py-16 border-t border-border-subtle ${
         isEven ? "" : "lg:flex-row-reverse"
       }`}
     >
@@ -118,7 +122,9 @@ function ServiceBlock({
         <h2 className="font-display font-800 text-3xl md:text-4xl text-text tracking-tight mb-3">
           {service.title}
         </h2>
-        <p className="text-accent font-medium text-sm mb-4">{service.tagline}</p>
+        <p className="text-accent font-medium text-sm mb-4">
+          {service.tagline}
+        </p>
         <p className="text-muted leading-relaxed mb-8">{service.desc}</p>
 
         <div className="flex flex-wrap gap-2 mb-8">
@@ -182,18 +188,133 @@ export default function ServicesPage() {
             <span className="text-muted">Nothing you don&apos;t.</span>
           </h1>
           <p className="mt-6 text-muted text-lg max-w-xl leading-relaxed">
-            Five disciplines, one team. We cover the full stack of building a
-            digital product — from idea to launch to growth.
+            Multiple disciplines, one team. We cover the full stack of building
+            a digital product — from idea to launch to growth.
           </p>
         </motion.div>
       </section>
 
-      {/* Services list */}
-      <div className="max-w-6xl mx-auto px-6">
-        {services.map((service, i) => (
-          <ServiceBlock key={service.id} service={service} index={i} />
-        ))}
-      </div>
+      {/* Core Services list */}
+      <section className="pt-12 pb-2 max-w-6xl mx-auto px-6">
+        <h1 className="font-display font-400 text-4xl md:text-5xl text-text tracking-tight max-w-2xl">
+          Core Services Offered.
+        </h1>
+        <p className="mt-6 text-muted text-lg leading-relaxed">
+          The main pillars of what we do. These are the services we&apos;re best
+          known for and where we add the most value. Each one is a full offering
+          in its own right, but they also work together as a cohesive suite.
+        </p>
+        <div className="max-w-6xl mx-auto px-6">
+          {core_services.map((service, i) => (
+            <ServiceBlock key={service.id} service={service} index={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* Extended Services list */}
+      <section className="pt-12 pb-2 max-w-6xl mx-auto px-6">
+        <h1 className="font-display font-400 text-4xl md:text-5xl text-text tracking-tight max-w-2xl">
+          Extended Services Offered.
+        </h1>
+        <p className="mt-6 text-muted text-lg leading-relaxed">
+          The other ways we can help. These services are often add-ons or
+          complementary to our core offerings, but they can also be standalone.
+          If you need something that isn&apos;t listed here, just ask —
+          we&apos;re flexible and always looking to solve new problems.
+        </p>
+        <div className="max-w-6xl mx-auto px-6">
+          {extended_services.map((service, i) => (
+            <ServiceBlock key={service.id} service={service} index={i} />
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="py-24 max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-14"
+        >
+          <span className="text-xs font-display font-600 uppercase tracking-widest text-accent">
+            Pricing
+          </span>
+          <h2 className="mt-3 font-display font-800 text-4xl md:text-5xl text-text tracking-tight">
+            Transparent pricing.
+            <br />
+            <span className="text-muted">No surprises.</span>
+          </h2>
+          <p className="mt-4 text-muted text-lg max-w-xl leading-relaxed">
+            MVPs typically range <span className="text-text font-medium">$3,000 – $12,000</span> depending on scope. Larger builds are scoped per milestone. Maintenance is hourly.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+          {[
+            {
+              model: "Fixed Price",
+              bestFor: "Defined scope MVPs & launches",
+              price: "$3,000 – $12,000",
+              note: "Full scope agreed upfront. Monthly invoice, no surprises.",
+              highlight: false,
+            },
+            {
+              model: "Milestone-Based",
+              bestFor: "Larger builds, phased delivery",
+              price: "Custom quote",
+              note: "We break the project into phases. You pay as each ships.",
+              highlight: true,
+            },
+            {
+              model: "Hourly Retainer",
+              bestFor: "Ongoing dev & maintenance",
+              price: "$30 – $40 / hr",
+              note: "Book a block of hours. Ideal for post-launch support.",
+              highlight: false,
+            },
+          ].map(({ model, bestFor, price, note, highlight }, i) => (
+            <motion.div
+              key={model}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className={`relative p-8 rounded-2xl border flex flex-col gap-4 ${
+                highlight
+                  ? "border-accent/40 bg-accent/5"
+                  : "border-border-subtle bg-surface"
+              }`}
+            >
+              {highlight && (
+                <span className="absolute -top-3 left-6 px-3 py-1 rounded-full bg-accent text-accent-fg text-xs font-display font-600">
+                  Most common
+                </span>
+              )}
+              <div>
+                <p className="font-display font-700 text-text text-lg">{model}</p>
+                <p className="text-xs text-subtle mt-1">{bestFor}</p>
+              </div>
+              <p className="font-display font-800 text-2xl text-accent">{price}</p>
+              <p className="text-sm text-muted leading-relaxed flex-1">{note}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <p className="text-sm text-muted">
+            Not sure which fits?
+          </p>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-accent-fg text-sm font-display font-600 hover:opacity-90 transition-opacity group"
+          >
+            Book a free 30-min call
+            <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+        </div>
+      </section>
 
       <CTASection />
     </>

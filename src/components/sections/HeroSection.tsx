@@ -8,38 +8,45 @@ import { useRef } from "react";
 
 const HeroParticles = dynamic(
   () => import("@/components/three/HeroParticles").then((m) => m.HeroParticles),
-  { ssr: false }
+  { ssr: false },
 );
 const HeroOrb = dynamic(
   () => import("@/components/three/HeroOrb").then((m) => m.HeroOrb),
-  { ssr: false }
+  { ssr: false },
 );
 const HeroMorph = dynamic(
   () => import("@/components/three/HeroMorph").then((m) => m.HeroMorph),
-  { ssr: false }
+  { ssr: false },
 );
 const HeroGlobe = dynamic(
   () => import("@/components/three/HeroGlobe").then((m) => m.HeroGlobe),
-  { ssr: false }
+  { ssr: false },
 );
 const HeroWave = dynamic(
   () => import("@/components/three/HeroWave").then((m) => m.HeroWave),
-  { ssr: false }
+  { ssr: false },
 );
 const HeroVortex = dynamic(
   () => import("@/components/three/HeroVortex").then((m) => m.HeroVortex),
-  { ssr: false }
+  { ssr: false },
 );
 
-const heroVariants = [HeroParticles, HeroOrb, HeroMorph, HeroGlobe, HeroWave, HeroVortex];
+const heroVariants = [
+  HeroParticles,
+  HeroOrb,
+  HeroMorph,
+  HeroGlobe,
+  HeroWave,
+  HeroVortex,
+];
 
 export function HeroSection() {
   const HeroCanvas = useRef(
-    heroVariants[Math.floor(Math.random() * heroVariants.length)]
+    heroVariants[Math.floor(Math.random() * heroVariants.length)],
   ).current;
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex overflow-hidden">
       {/* Three.js canvas */}
       <div className="absolute inset-0 opacity-90">
         <HeroCanvas />
@@ -47,10 +54,10 @@ export function HeroSection() {
 
       {/* Gradient overlay — fades canvas into bg at bottom */}
       <div className="absolute inset-0 bg-gradient-to-b from-bg/10 via-transparent to-bg pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-r from-bg/40 via-bg/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-bg/20 via-transparent to-bg/20 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-32">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-32 flex flex-col">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -63,16 +70,14 @@ export function HeroSection() {
         </motion.div>
 
         <motion.h1
-          className="font-display font-800 text-5xl md:text-7xl lg:text-8xl text-text leading-[0.95] tracking-tight max-w-4xl"
+          className="font-display font-800 text-5xl md:text-7xl lg:text-8xl text-text leading-[0.95] tracking-tight max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
         >
-          We build
-          <br />
-          <span className="text-accent">products</span> that
-          <br />
-          move markets.
+          Your technical <br />
+          <span className="text-accent">co-founder</span>, <br />
+          without the equity ask.
         </motion.h1>
 
         <motion.p
@@ -111,19 +116,21 @@ export function HeroSection() {
 
         {/* Stats */}
         <motion.div
-          className="mt-20 flex flex-wrap gap-12"
+          className="mt-20 flex flex-wrap justify-center gap-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
           {[
-            { value: "2", label: "Client shipped" },
-            { value: "5", label: "Services offered" },
+            { value: "2", label: "Products in market" },
+            { value: "6", label: "Week avg delivery" },
             { value: "3", label: "Years experience" },
             { value: "100%", label: "Remote-native" },
           ].map(({ value, label }) => (
             <div key={label}>
-              <p className="font-display font-800 text-2xl text-text">{value}</p>
+              <p className="font-display font-800 text-2xl text-text">
+                {value}
+              </p>
               <p className="text-xs text-muted mt-0.5">{label}</p>
             </div>
           ))}
@@ -132,12 +139,14 @@ export function HeroSection() {
 
       {/* Scroll cue */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-subtle"
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-subtle"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2 }}
       >
-        <span className="text-xs tracking-widest uppercase font-display">Scroll</span>
+        <span className="text-xs tracking-widest uppercase font-display">
+          Scroll
+        </span>
         <ChevronDown size={14} className="animate-bounce" />
       </motion.div>
     </section>

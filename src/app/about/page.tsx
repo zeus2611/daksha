@@ -57,10 +57,12 @@ export default function AboutPage() {
             specialist behind it.
           </p>
           <p className="mt-4 text-muted leading-relaxed">
-            We started as collaborators on a single project. The results were
-            good enough that we decided to do it for others. Every person here
-            has 2–3 years of focused, real-world experience — and we move with
-            the speed and accountability of a small team that genuinely cares.
+            We started on a single project together — BridgeTalk, a full EdTech
+            platform that went from idea to App Store in one focused sprint. The
+            speed and quality that came from a tight specialist team made it
+            obvious: this should be permanent. Daksha exists to give founders
+            that same edge — a technical partner who treats your product like
+            their own, without the equity ask.
           </p>
         </motion.div>
       </section>

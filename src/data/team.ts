@@ -11,8 +11,8 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   {
     name: "Nischay",
-    role: "Full-Stack Developer",
-    bio: "Builds the backend systems, APIs, and complex web platforms. Obsessed with clean architecture and performance.",
+    role: "Backend & Systems",
+    bio: "Built the backend and system architecture for both BridgeTalk and Journll Insights. Owns the infra, APIs, and AI pipelines that keep products running.",
     tags: ["Python", "Google Cloud", "OpenAI", "TypeScript"],
     socials: {
       github: "https://github.com/zeus2611",
@@ -23,8 +23,8 @@ export const team: TeamMember[] = [
   },
   {
     name: "Shivanshu Singh",
-    role: "Mobile Developer",
-    bio: "Flutter specialist with a sharp eye for UI. Builds cross-platform apps that feel native on both iOS and Android.",
+    role: "Mobile & Frontend Developer",
+    bio: "Built the Flutter app and web frontend for both BridgeTalk and Journll Insights. Delivers UIs that feel native — shipped to App Store & Play Store.",
     tags: ["Flutter", "Dart", "Firebase", "iOS", "Android"],
     socials: {
       github: "https://github.com/Shivanshu97i",
@@ -36,7 +36,7 @@ export const team: TeamMember[] = [
   {
     name: "Rithik Kasera",
     role: "Brand & UX Designer",
-    bio: "Translates complex ideas into clean, trustworthy visual systems. From logo to pixel-perfect UI, every detail is intentional.",
+    bio: "Designed BridgeTalk's full brand identity and UI system end-to-end. Translates complex ideas into clean, trustworthy visual systems.",
     tags: ["Figma", "Branding", "UI/UX", "Design Systems"],
     socials: {
       linkedin: "https://www.linkedin.com/in/rithik-kasera310/",
@@ -46,19 +46,19 @@ export const team: TeamMember[] = [
   },
   {
     name: "Aditya Singh",
-    role: "Marketing Strategist",
-    bio: "Drives organic growth through SEO, content, and community. Focuses on systems that compound rather than campaigns that expire.",
+    role: "Growth & Launch Strategy",
+    bio: "Built BridgeTalk's SEO foundation and community launch playbook. Drives organic growth systems that compound over time, not campaigns that expire.",
     tags: ["SEO", "Content Strategy", "Analytics", "Community"],
     socials: {
       linkedin: "https://www.linkedin.com/in/aditya-singh-journll/",
     },
-    initials: "MS",
+    initials: "AS",
     image: null,
   },
   {
     name: "Rizwal Abrol",
-    role: "Video & Graphics",
-    bio: "Turns products into stories. From launch videos to testimonial edits, creates visual content that converts.",
+    role: "Motion & Visual Production",
+    bio: "Produced BridgeTalk's launch video and testimonial edits. Turns products into stories — visual content that actually converts.",
     tags: ["After Effects", "Premiere Pro", "Motion", "3D"],
     socials: {
       linkedin: "https://www.linkedin.com/in/rizwal-abrol007/",

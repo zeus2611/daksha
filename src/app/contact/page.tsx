@@ -19,11 +19,6 @@ const details = [
     label: "Based in",
     value: "India — remote-native worldwide",
   },
-  {
-    icon: Clock,
-    label: "Response time",
-    value: "Within 24 hours",
-  },
 ];
 
 export default function ContactPage() {
@@ -36,18 +31,29 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-xs font-display font-600 uppercase tracking-widest text-accent">
-            Contact
-          </span>
-          <h1 className="mt-3 font-display font-800 text-5xl md:text-6xl text-text tracking-tight mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-display font-600 uppercase tracking-widest text-accent">
+              Contact
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+              We reply within 24 hours
+            </span>
+          </div>
+          <h1 className="font-display font-800 text-5xl md:text-6xl text-text tracking-tight mb-6">
             Let&apos;s talk
             <br />
             <span className="text-muted">about your project.</span>
           </h1>
-          <p className="text-muted leading-relaxed mb-12">
+          <p className="text-muted leading-relaxed mb-4">
             Book a free 30-minute discovery call. We&apos;ll ask about your
             product, your timeline, and your goals — then tell you honestly
             whether and how we can help.
+          </p>
+          <p className="text-sm text-subtle mb-12">
+            Not sure about budget?{" "}
+            <span className="text-text font-medium">Most projects start at $3k.</span>{" "}
+            Let&apos;s talk about what&apos;s right for yours.
           </p>
 
           <div className="space-y-6">

@@ -8,7 +8,7 @@ export interface Project {
   title: string;
   category: string;
   year: string;
-  status: "Shipped" | "Building" | "Paused";
+  status: "Shipped" | "Building" | "Paused" | "Shipped & Improving";
   tagline: string;
   overview: string;
   services: string[];
@@ -71,16 +71,16 @@ export const projects: Project[] = [
     ],
     desc: "Full-stack SaaS that uses AI to analyze Reddit conversations and surface startup ideas, pain points, leads, and market trends for founders.",
     tags: ["Next.js", "AI/LLM", "SaaS", "Reddit API", "Stripe"],
-    highlight: "AI Reddit analytics + subscription SaaS + shipped solo",
+    highlight: "AI Reddit analytics + subscription SaaS + founder-focused UX",
     liveUrl: "https://journllinsights.app",
   },
   {
     slug: "bridgetalk",
     title: "BridgeTalk",
     category: "EdTech Platform",
-    year: "2024 – Present",
+    year: "2025 – Present",
     liveUrl: "https://www.bridgetalk.ai",
-    status: "Building",
+    status: "Shipped & Improving",
     tagline: "From zero to a fully shipped digital product for TOEFL/IELTS test takers.",
     overview:
       "BridgeTalk is an EdTech platform designed for TOEFL and IELTS test takers, with plans to expand into the broader ESL (English as a Second Language) market. We partnered with the founder from day one to build the entire digital stack — mobile app, web presence, B2B infrastructure, and marketing engine.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     ],
     desc: "End-to-end digital suite for a TOEFL/IELTS prep platform. Mobile app, web presence, B2B tools, video production, and ongoing growth marketing.",
     tags: ["Mobile App", "Web Dev", "Video", "SEO", "Branding"],
-    highlight: "Flutter app + Next.js platform + full video suite",
+    highlight: "Flutter app + Next.js platform + seamless cross-platform experience",
   },
 ];
 
